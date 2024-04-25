@@ -51,6 +51,8 @@ CREATE TABLE IF NOT EXISTS `zms_server`.`domain` (
   `feature_flags` INT NOT NULL DEFAULT 0,
   `environment` VARCHAR(32) NOT NULL DEFAULT '',
   `resource_owner` VARCHAR(256) NOT NULL DEFAULT '',
+  `azure_tenant` VARCHAR(128) NOT NULL DEFAULT '',
+  `azure_client` VARCHAR(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`domain_id`),
   UNIQUE INDEX `uq_name` (`name` ASC),
   INDEX `idx_modified` (`modified` ASC),

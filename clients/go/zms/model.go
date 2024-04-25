@@ -303,6 +303,16 @@ type DomainMeta struct {
 	AzureSubscription string `json:"azureSubscription" rdl:"optional" yaml:",omitempty"`
 
 	//
+	// associated azure tenant id (system attribute)
+	//
+	AzureTenant string `json:"azureTenant" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure client id (system attribute)
+	//
+	AzureClient string `json:"azureClient" rdl:"optional" yaml:",omitempty"`
+
+	//
 	// associated gcp project id (system attribute - uniqueness check - if
 	// enabled)
 	//
@@ -443,6 +453,18 @@ func (self *DomainMeta) Validate() error {
 			return fmt.Errorf("DomainMeta.azureSubscription does not contain a valid String (%v)", val.Error)
 		}
 	}
+	if self.AzureTenant != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureTenant)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureTenant does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureClient != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureClient)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureClient does not contain a valid String (%v)", val.Error)
+		}
+	}
 	if self.GcpProject != "" {
 		val := rdl.Validate(ZMSSchema(), "String", self.GcpProject)
 		if !val.Valid {
@@ -573,6 +595,16 @@ type Domain struct {
 	// enabled)
 	//
 	AzureSubscription string `json:"azureSubscription" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure tenant id (system attribute)
+	//
+	AzureTenant string `json:"azureTenant" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure client id (system attribute)
+	//
+	AzureClient string `json:"azureClient" rdl:"optional" yaml:",omitempty"`
 
 	//
 	// associated gcp project id (system attribute - uniqueness check - if
@@ -728,6 +760,18 @@ func (self *Domain) Validate() error {
 		val := rdl.Validate(ZMSSchema(), "String", self.AzureSubscription)
 		if !val.Valid {
 			return fmt.Errorf("Domain.azureSubscription does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureTenant != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureTenant)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureTenant does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureClient != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureClient)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureClient does not contain a valid String (%v)", val.Error)
 		}
 	}
 	if self.GcpProject != "" {
@@ -3976,6 +4020,16 @@ type TopLevelDomain struct {
 	AzureSubscription string `json:"azureSubscription" rdl:"optional" yaml:",omitempty"`
 
 	//
+	// associated azure tenant id (system attribute)
+	//
+	AzureTenant string `json:"azureTenant" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure client id (system attribute)
+	//
+	AzureClient string `json:"azureClient" rdl:"optional" yaml:",omitempty"`
+
+	//
 	// associated gcp project id (system attribute - uniqueness check - if
 	// enabled)
 	//
@@ -4134,6 +4188,18 @@ func (self *TopLevelDomain) Validate() error {
 			return fmt.Errorf("TopLevelDomain.azureSubscription does not contain a valid String (%v)", val.Error)
 		}
 	}
+	if self.AzureTenant != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureTenant)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureTenant does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureClient != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureClient)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureClient does not contain a valid String (%v)", val.Error)
+		}
+	}
 	if self.GcpProject != "" {
 		val := rdl.Validate(ZMSSchema(), "String", self.GcpProject)
 		if !val.Valid {
@@ -4270,6 +4336,16 @@ type SubDomain struct {
 	// enabled)
 	//
 	AzureSubscription string `json:"azureSubscription" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure tenant id (system attribute)
+	//
+	AzureTenant string `json:"azureTenant" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure client id (system attribute)
+	//
+	AzureClient string `json:"azureClient" rdl:"optional" yaml:",omitempty"`
 
 	//
 	// associated gcp project id (system attribute - uniqueness check - if
@@ -4435,6 +4511,18 @@ func (self *SubDomain) Validate() error {
 			return fmt.Errorf("SubDomain.azureSubscription does not contain a valid String (%v)", val.Error)
 		}
 	}
+	if self.AzureTenant != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureTenant)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureTenant does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureClient != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureClient)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureClient does not contain a valid String (%v)", val.Error)
+		}
+	}
 	if self.GcpProject != "" {
 		val := rdl.Validate(ZMSSchema(), "String", self.GcpProject)
 		if !val.Valid {
@@ -4580,6 +4668,16 @@ type UserDomain struct {
 	// enabled)
 	//
 	AzureSubscription string `json:"azureSubscription" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure tenant id (system attribute)
+	//
+	AzureTenant string `json:"azureTenant" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure client id (system attribute)
+	//
+	AzureClient string `json:"azureClient" rdl:"optional" yaml:",omitempty"`
 
 	//
 	// associated gcp project id (system attribute - uniqueness check - if
@@ -4730,6 +4828,18 @@ func (self *UserDomain) Validate() error {
 		val := rdl.Validate(ZMSSchema(), "String", self.AzureSubscription)
 		if !val.Valid {
 			return fmt.Errorf("UserDomain.azureSubscription does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureTenant != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureTenant)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureTenant does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureClient != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureClient)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureClient does not contain a valid String (%v)", val.Error)
 		}
 	}
 	if self.GcpProject != "" {
@@ -7185,6 +7295,16 @@ type DomainData struct {
 	AzureSubscription string `json:"azureSubscription" rdl:"optional" yaml:",omitempty"`
 
 	//
+	// associated azure tenant id (system attribute)
+	//
+	AzureTenant string `json:"azureTenant" rdl:"optional" yaml:",omitempty"`
+
+	//
+	// associated azure client id (system attribute)
+	//
+	AzureClient string `json:"azureClient" rdl:"optional" yaml:",omitempty"`
+
+	//
 	// associated gcp project id (system attribute - uniqueness check - if
 	// enabled)
 	//
@@ -7373,6 +7493,18 @@ func (self *DomainData) Validate() error {
 		val := rdl.Validate(ZMSSchema(), "String", self.AzureSubscription)
 		if !val.Valid {
 			return fmt.Errorf("DomainData.azureSubscription does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureTenant != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureTenant)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureTenant does not contain a valid String (%v)", val.Error)
+		}
+	}
+	if self.AzureClient != "" {
+		val := rdl.Validate(ZMSSchema(), "String", self.AzureClient)
+		if !val.Valid {
+			return fmt.Errorf("DomainMeta.azureClient does not contain a valid String (%v)", val.Error)
 		}
 	}
 	if self.GcpProject != "" {

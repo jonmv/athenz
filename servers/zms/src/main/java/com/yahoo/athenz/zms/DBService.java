@@ -4171,6 +4171,8 @@ public class DBService implements RolesProvider {
                         .setApplicationId(domain.getApplicationId())
                         .setAccount(domain.getAccount())
                         .setAzureSubscription(domain.getAzureSubscription())
+                        .setAzureTenant(domain.getAzureTenant())
+                        .setAzureClient(domain.getAzureClient())
                         .setGcpProject(domain.getGcpProject())
                         .setGcpProjectNumber(domain.getGcpProjectNumber())
                         .setYpmId(domain.getYpmId())
@@ -4604,6 +4606,8 @@ public class DBService implements RolesProvider {
                     throw ZMSUtils.forbiddenError("unauthorized to reset system meta attribute: " + attribute, caller);
                 }
                 domain.setAzureSubscription(meta.getAzureSubscription());
+                domain.setAzureTenant(meta.getAzureTenant());
+                domain.setAzureClient(meta.getAzureClient());
                 break;
             case ZMSConsts.SYSTEM_META_GCP_PROJECT:
                 if (!isDeleteSystemMetaAllowed(deleteAllowed, domain.getGcpProject(), meta.getGcpProject())) {

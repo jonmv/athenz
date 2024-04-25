@@ -5183,6 +5183,8 @@ public class DBServiceTest {
                 .setYpmId(1234)
                 .setCertDnsDomain("athenz.cloud")
                 .setAzureSubscription("azure")
+                .setAzureTenant("tenant")
+                .setAzureClient("client")
                 .setBusinessService("123:business service")
                 .setGcpProject("gcp")
                 .setGcpProjectNumber("1234")
@@ -5197,8 +5199,11 @@ public class DBServiceTest {
         assertEquals(domain.getCertDnsDomain(), "athenz.cloud");
         zms.dbService.updateSystemMetaFields(domain, "azuresubscription", true, meta);
         assertEquals(domain.getAzureSubscription(), "azure");
+        assertEquals(domain.getAzureTenant(), "tenant");
+        assertEquals(domain.getAzureClient(), "client");
         zms.dbService.updateSystemMetaFields(domain, "gcpproject", true, meta);
         assertEquals(domain.getGcpProject(), "gcp");
+        assertEquals(domain.getGcpProjectNumber(), "1234");
         zms.dbService.updateSystemMetaFields(domain, "businessservice", true, meta);
         assertEquals(domain.getBusinessService(), "123:business service");
         zms.dbService.updateSystemMetaFields(domain, "featureflags", true, meta);
@@ -5218,6 +5223,8 @@ public class DBServiceTest {
                 .setYpmId(1234)
                 .setCertDnsDomain("athenz.cloud")
                 .setAzureSubscription("azure")
+                .setAzureTenant("tenant")
+                .setAzureClient("client")
                 .setBusinessService("123:business service")
                 .setGcpProject("gcp")
                 .setGcpProjectNumber("1235")
@@ -5230,8 +5237,11 @@ public class DBServiceTest {
         assertEquals(domain1.getCertDnsDomain(), "athenz.cloud");
         zms.dbService.updateSystemMetaFields(domain1, "azuresubscription", false, meta1);
         assertEquals(domain1.getAzureSubscription(), "azure");
+        assertEquals(domain1.getAzureTenant(), "tenant");
+        assertEquals(domain1.getAzureClient(), "client");
         zms.dbService.updateSystemMetaFields(domain1, "gcpproject", false, meta1);
         assertEquals(domain1.getGcpProject(), "gcp");
+        assertEquals(domain1.getGcpProjectNumber(), "1235");
         zms.dbService.updateSystemMetaFields(domain1, "businessservice", false, meta1);
         assertEquals(domain1.getBusinessService(), "123:business service");
         zms.dbService.updateSystemMetaFields(domain, "featureflags", false, meta);
@@ -5244,6 +5254,8 @@ public class DBServiceTest {
                 .setYpmId(1234)
                 .setCertDnsDomain("athenz.cloud")
                 .setAzureSubscription("azure")
+                .setAzureTenant("tenant")
+                .setAzureClient("client")
                 .setBusinessService("123:business service")
                 .setGcpProject("gcp")
                 .setGcpProjectNumber("1236")
@@ -5253,6 +5265,8 @@ public class DBServiceTest {
                 .setYpmId(1235)
                 .setCertDnsDomain("athenz.cloud.new")
                 .setAzureSubscription("azure.new")
+                .setAzureTenant("tenant.new")
+                .setAzureClient("client.new")
                 .setBusinessService("1234:business service2")
                 .setGcpProject("gcp.new")
                 .setGcpProjectNumber("1237")
@@ -5317,6 +5331,8 @@ public class DBServiceTest {
                 .setYpmId(1234)
                 .setCertDnsDomain("athenz.cloud")
                 .setAzureSubscription("azure")
+                .setAzureTenant("tenant")
+                .setAzureClient("client")
                 .setBusinessService("123:business service")
                 .setGcpProject("gcp")
                 .setGcpProjectNumber("1237")
@@ -5326,6 +5342,8 @@ public class DBServiceTest {
                 .setYpmId(1234)
                 .setCertDnsDomain("athenz.cloud")
                 .setAzureSubscription("azure")
+                .setAzureTenant("tenant")
+                .setAzureClient("client")
                 .setBusinessService("123:business service")
                 .setGcpProject("gcp")
                 .setGcpProjectNumber("1237")
