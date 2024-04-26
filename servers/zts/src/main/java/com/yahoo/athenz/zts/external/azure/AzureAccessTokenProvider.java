@@ -141,8 +141,7 @@ public class AzureAccessTokenProvider implements ExternalCredentialsProvider {
 
             if (idTokenGroups.get(0).equals(SYSTEM_AZURE_CLIENT_ROLE)) {
                 return systemAccessToken;
-            }
-            else { // Otherwise, we need to find the Azure client ID from the requested resource group and client name
+            } else { // Otherwise, we need to find the Azure client ID from the requested resource group and client name
                 String azureResourceGroup = getRequestAttribute(attributes, AZURE_RESOURCE_GROUP, null);
                 String azureClientName = getRequestAttribute(attributes, AZURE_CLIENT_NAME, null);
                 if ((StringUtil.isEmpty(azureResourceGroup) || StringUtil.isEmpty(azureClientName))) {
